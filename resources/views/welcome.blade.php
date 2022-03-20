@@ -406,7 +406,7 @@
             <form action="">
 
                 <div class="flex border-2 border-gray-200 rounded">
-                    <input type="text" name="keyword" class="px-6 py-4 w-80" placeholder="Search...">
+                    <input type="text" value="{{$keyword}}" name="keyword" class="px-6 py-4 w-80" placeholder="Search...">
                     <button class="px- text-white bg-gray-600 border-l ">
                         Search
                     </button>
@@ -419,6 +419,16 @@
             <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
 
                 <div class="grid grid-cols-1 md:grid-cols-1">
+                    @if(count($items) < 1)
+                        <div class="p- border-t border-gray-200 dark:border-gray-700 md:border-l">
+                            <div class="flex items-center">
+                                <div class="ml-2 mr-2 text-lg leading-7 font-semibold text-gray-600 dark:text-gray-400">
+                                    No vehicle models found
+                                </div>
+                            </div>
+
+                        </div>
+                    @endif
                     @foreach($items as $key => $item)
                         <div class="p- border-t border-gray-200 dark:border-gray-700 md:border-l">
                             <div class="flex items-center">

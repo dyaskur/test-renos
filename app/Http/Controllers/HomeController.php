@@ -11,7 +11,7 @@ class HomeController extends Controller
     //
     public function welcome(Request $request)
     {
-        $data = [];
+        $data = ['keyword' => $request->keyword];
 
         $models = VehicleModel::query();
 
